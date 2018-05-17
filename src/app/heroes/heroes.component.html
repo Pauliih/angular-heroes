@@ -1,27 +1,8 @@
 <h2>My Heroes</h2>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero"
->
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
-
-<!-- Si hay un heroe seleccionado aparece la información -->
-<div *ngIf="selectedHero">
-  <!-- Mostrar el object hero -->
-  <h2>
-    <!-- usando pipes -->
-    {{selectedHero.name | uppercase }} Details
-  </h2>
-
-  <div>
-    <span>id: </span>{{selectedHero.id}}
-  </div>
-
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedHero.name" placeholder="name">
-    </label>
-  </div>
-
-</div>
+<!-- llamar al detalle del heroe -->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>

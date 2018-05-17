@@ -1,0 +1,19 @@
+<!-- Si hay un heroe seleccionado aparece la información -->
+<div *ngIf="hero">
+  <!-- Mostrar el object hero -->
+  <h2>
+    <!-- usando pipes -->
+    {{hero.name | uppercase }} Details
+  </h2>
+
+  <div>
+    <span>id: </span>{{hero.id}}
+  </div>
+
+  <div>
+    <label>name:
+      <input [(ngModel)]="hero.name" placeholder="name">
+    </label>
+  </div>
+
+</div>
